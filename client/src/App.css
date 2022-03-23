@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+/* Navbar */
+
+/* ****** */
+
+/* Header */
+.navbar{
+    height: 13vh;
+    background: #1A4D8C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-logo{
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-items{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: flex-end;
+    margin-right: 2rem;
+  
+  }
+  
+  .nav-item{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  .nav-item a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    padding: 6px 10px;
+    border-radius: 5px;
+  }
+  
+  .nav-item a:hover{
+    background: white;
+  }
+
+  .givehelp-submenu{
+    width: 10rem;
+    position: absolute;
+    Top: 70px;
+    list-style:none;
+    text-align: start;
+   
+}
+
+.givehelp-submenu li{
+    background: #1A4D8C;
+    cursor: pointer;
+}
+
+.givehelp-submenu li:hover{
+    background: white;
+    
+}
+
+.givehelp-submenu.clicked{
+    display: none;
+}
+
+.submenu-item{
+    display: block;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+/* ****** */
+
+/* Jarrod's Module */
+.form-inner{
+    
+}
+/* ****** */
+
+/* Hibraheem's Module */
+
+/* ****** */
+
+
+/* Footer */
+.footer{
+    height: 10vh;
+    background: #1A4D8C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* ****** */

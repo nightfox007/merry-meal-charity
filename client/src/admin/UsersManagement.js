@@ -3,7 +3,7 @@ import { CDBTable, CDBTableHeader, CDBTableBody } from 'cdbreact'
 import Sidebar from './Sidebar'
 // import AdminNav from '../Navbar'
 
-export const PartnersManagement = () => {
+export const UsersManagement = () => {
   return (
     <div className='d-flex'>
       <div>

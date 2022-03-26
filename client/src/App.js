@@ -1,10 +1,6 @@
 import './App.css'
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from 'react-router-dom'
-import Header from './components/Header'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import NavbarC from './components/Navbar'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
@@ -17,42 +13,50 @@ import FoodMenu from './components/FoodMenu'
 import FoodSafety from './components/FoodSafety'
 import FoodHelp from './components/FoodHelp'
 import Donation from './components/Donation'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
+import Login from './admin/Login'
+import MealRequest from './components/MealRequest'
+import { PartnersManagement } from './admin/PartnersManagement'
+import { UsersManagement } from './admin/UsersManagement'
+import { Dashboard } from './admin/Dashboard'
+import { Profile } from './admin/Profile'
 
 function App() {
   return (
     <div className='App'>
       <Router>
-        <Header />
+        <NavbarC />
         <Routes>
           {/* Pages */}
-          <Route path='/' exact component={Home}></Route>
-          <Route path='/AboutUs/' exact component={AboutUs}></Route>
-          <Route path='/ContactUs/' exact component={ContactUs}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/aboutus' element={<AboutUs />} />
+          <Route path='/contactus' element={<ContactUs />} />
 
           {/* Jarrod's Module */}
-          <Route path='/Member/' exact component={Member}></Route>
-          <Route path='/CareGiver/' exact component={CareGiver}></Route>
-          <Route path='/Volunteer/' exact component={Volunteer}></Route>
-          <Route path='/FoodPartner/' exact component={FoodPartner}></Route>
-          <Route
-            path='/DeliveryPartner/'
-            exact
-            component={DeliveryPartner}
-          ></Route>
+          <Route path='/member' element={<Member />} />
+          <Route path='/caregiver' element={<CareGiver />} />
+          <Route path='/volunteer' element={<Volunteer />} />
+          <Route path='/foodpartner' element={<FoodPartner />} />
+          <Route path='/deliverypartner' element={<DeliveryPartner />} />
 
           {/* Hibraheem's Module */}
-          <Route path='/Donation/' exact component={Donation}></Route>
-          <Route path='/FoodMenu/' exact component={FoodMenu}></Route>
-          <Route path='/FoodHelp/' exact component={FoodHelp}></Route>
+          <Route path='/donate' element={<Donation />} />
+          <Route path='/mealrequest' element={<MealRequest />} />
+
+          <Route path='/foodmenu' element={<FoodMenu />} />
+          <Route path='/foodhelp' element={<FoodHelp />} />
 
           {/* Nikhat's Module */}
-          <Route path='/FoodSafety/' exact component={FoodSafety}></Route>
+          <Route path='/foodsafety' element={<FoodSafety />} />
 
           {/* Judith's & Neha's Module */}
-
-          <Footer />
+          <Route path='/login' element={<Login />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/users' element={<UsersManagement />} />
+          <Route path='/partners' element={<PartnersManagement />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
+        {/* <Footer /> */}
       </Router>
     </div>
   )

@@ -40,7 +40,7 @@ const Donation = () => {
     <div className='container'>
       {!showPaymentForm && (
         <>
-          <h1 class='fw-bold'>Please Donate !</h1>
+          <h1 className='fw-bold'>Please Donate !</h1>
           <br />
           <br />
           <Formik
@@ -91,7 +91,7 @@ const Donation = () => {
 
                 <button
                   type='submit'
-                  class='btn btn-primary'
+                  className='btn btn-primary'
                   onClick={() => setshowPaymentForm(true)}
                 >
                   &#8594;Next
@@ -103,7 +103,7 @@ const Donation = () => {
       )}
       {showPaymentForm && (
         <>
-          <h1 class='fw-bold'>Payment Info</h1>
+          <h1 className='fw-bold'>Payment Info</h1>
           <br />
           <Formik
             initialValues={{
@@ -122,16 +122,16 @@ const Donation = () => {
             {({ values }) => (
               <Form>
                 <div>
-                  <div class='row'>
+                  <div className='row'>
                     <div className='col-3'>
-                      <label class='fw-bold radio'>
+                      <label className='fw-bold radio'>
                         <Field type='radio' name='picked' value='visa' />
                         <img src='visa.png' width={'10%'} />
                         Pay with Visa
                       </label>
                     </div>
                     <div className='col-3'>
-                      <label class='fw-bold radio'>
+                      <label className='fw-bold radio'>
                         <Field
                           type='radio'
                           name='picked'
@@ -143,16 +143,16 @@ const Donation = () => {
                     </div>
                   </div>
                   <br />
-                  <div class='row'>
+                  <div className='row'>
                     <div className='col-3'>
-                      <label class='fw-bold radio'>
+                      <label className='fw-bold radio'>
                         <Field type='radio' name='picked' value='mastercard' />
                         <img src='mastercard.png' width={'10%'} /> Pay With
                         Master
                       </label>
                     </div>
                     <div className='col-3'>
-                      <label class='fw-bold radio'>
+                      <label className='fw-bold radio'>
                         <Field type='radio' name='picked' value='paypal' />
                         <img src='paypal.png' width={'8%'} /> Pay With PayPal
                       </label>
@@ -201,7 +201,7 @@ const Donation = () => {
                 <br />
                 <button
                   type='submit'
-                  class='btn btn-primary'
+                  className='btn btn-primary'
                   onClick={() => console.log('CheckOut!')}
                 >
                   Checkout

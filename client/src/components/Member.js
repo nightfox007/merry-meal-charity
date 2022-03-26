@@ -1,284 +1,126 @@
-import React, { Component } from 'react'
-import { Form, Button, Checkbox, DatePicker, Input, Select, Upload } from 'antd'
+import React, { useState, useEffect } from 'react';
+import {Button, Checkbox, Upload} from "antd";
+import './Member.css'
 
-class Member extends Component {
-  render() {
-    return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          backgroundColor: 'cadetblue',
-        }}
-      >
-        <Form
-          autoComplete='off'
-          wrapperCol={{ span: 12 }}
-          labelCol={{ span: 9 }}
-          style={{
-            borderStyle: 'solid',
-            borderColor: '#F9E45B',
-            padding: '10px',
-            backgroundColor: 'white',
-          }}
-        >
-          <h2>Member Registration</h2>
+function Member(){
+        return(
+            <div className='body'>
+            <div className='container'>
+                <div className='title'>Member Registration</div>
+                <div className='content'>
+                    <form action='#'>
+                        <div className='user-details'>
+                            <div className='input-box'>
+                                <span className='details'>First Name</span>
+                                <input type="text" placeholder='Enter your First Name' required minLength="3"/>
+                            </div>
+                            <div className='input-box'>
+                                <span className='details'>Last Name</span>
+                                <input type="text" placeholder='Enter your Last Name' required minLength="3"/>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Email</span>
+                                <input type="email" placeholder="Enter your email" />
+                           </div>
+                           <div class="input-box">
+                                <span class="details">Contact Number</span>
+                                <input type="text" placeholder="Enter your contact number" required maxLength="12"/>
+                           </div>
+                           <div class="input-box">
+                                <span class="details">Date of birth</span>
+                                <input type="date" min="1922-01-01" max="1962-12-31" required/>
+                           </div>
+                           <div className='input-box'>
+                                <span className='details'>Disability</span>
+                                <input type="text" placeholder='Describe your Disability' />
+                            </div>
+                           
+                           <div class="input-box">
+                                <span class="details">Disease Type</span>
+                                <select className='dropdown' id='disease'>
+                                  <option value="" disabled selected hidden>Choose your Disease Type</option>
+                                  <option value="diabetes">Diabetes</option>    
+                                  <option value="fattyLiver">Fatty Liver</option>    
+                                  <option value="chronicKidney">Chronic Kidney</option>    
+                                </select> 
+                           </div>
 
-          <Form.Item
-            name='firstName'
-            label='First Name'
-            rules={[
-              { required: true, message: 'Require to fill-in this field' },
-              { whitespace: true },
-              { min: 3 },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='First name:' />
-          </Form.Item>
+                           <div class="input-box">
+                                <span class="details">Gender</span>
+                                <select className='dropdown' id="gender" required>
+                                 <option value="" disabled selected hidden>Choose your Gender</option>
+                                 <option value="Male">Male</option>  
+                                 <option value="Female">Female</option>  
+                                </select>
+                           </div>
 
-          <Form.Item
-            name='lastName'
-            label='Last Name'
-            rules={[
-              { required: true, message: 'Require to fill-in this field' },
-              { whitespace: true },
-              { min: 3 },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='Last name:' />
-          </Form.Item>
+                           <div className='input-box'>
+                                <span className='details'>Identity Card</span>
+                                <Upload listType='picture' action={"http://localhost:3000/Member"} accept=".png,.jpeg,.jpg" >
+                                <Button 
+                                style={{width:"292px", borderRadius:"5px", height:"45px",}}>
+                                    Click to Upload Picture
+                                </Button>
+                                </Upload>
+                            </div>
+                            
+                            <div class="input-box">
+                                <span class="details">location</span>
+                                <select className='dropdown' id="location" required>
+                                 <option value="" disabled selected hidden>Available Location within 10km radius</option>
+                                 <option value="pj">Petaling Jaya</option>  
+                                 <option value="kl">Kuala Lumpur</option>
+                                 <option value="pg">Penang</option>
+                                 <option value="mumbai">Mumbai</option>
+                                 <option value="chennai">Chennai</option>
+                                </select>
+                                <p style={{"color":"blue"}}>*If your location is not within this area you will recieve the frozen food</p>
+                           </div>
 
-          <Form.Item
-            name='email'
-            type='email'
-            label='Email'
-            requiredMark='optional'
-            rules={[
-              {
-                type: 'email',
-                message: 'Please enter a valid Email',
-              },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='Email:' />
-          </Form.Item>
+                           <div className='input-box'>
+                                <span className='details'>Street Address</span>
+                                <input type="text" placeholder='Enter your street address' required/>
+                            </div>
+                            <div className='input-box'>
+                                <span className='details'>City</span>
+                                <input type="text" placeholder='Enter your city' required/>
+                            </div>
+                            <div className='input-box'>
+                                <span className='details'>State</span>
+                                <input type="text" placeholder='Enter your State' required/>
+                            </div>
 
-          <Form.Item
-            name='contactNumber'
-            label='Contact Number'
-            rules={[
-              { required: true, message: 'Please fil-in your contact number' },
-              { min: 9, message: 'Please enter at least 9 numbers' },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='Contact Number:' />
-          </Form.Item>
+                            <div className='input-box'>
+                                <span className='details'>Zip code</span>
+                                <input type="text" placeholder='Enter your zip code' required/>
+                            </div>
 
-          <Form.Item
-            name='gender'
-            label='Gender'
-            rules={[{ required: true, message: 'Please Select your gender' }]}
-            hasFeedback
-          >
-            <Select placeholder='Select a Gender'>
-              <Select.Option value='male'>Male</Select.Option>
-              <Select.Option value='female'>Female</Select.Option>
-            </Select>
-          </Form.Item>
+                            <div className='input-box'>
+                                <span className='details'>Country</span>
+                                <input type="text" placeholder='Enter your Country' required/>
+                            </div>
 
-          <Form.Item
-            name='dob'
-            label='D.O.B'
-            rules={[
-              { required: true, message: 'Please Select your Date of Birth' },
-            ]}
-            hasFeedback
-          >
-            <DatePicker
-              style={{ width: '100%' }}
-              picker='date'
-              placeholder='Choose Date of Birth:'
-            />
-          </Form.Item>
+                            <div className='input-box'>
+                                
+                            </div>
 
-          <Form.Item
-            name='diseaseType'
-            label='Disease Type'
-            requiredMark='optional'
-          >
-            <Select placeholder='Choose your Disease Type'>
-              <Select.Option value='diabetes'>Diabetes</Select.Option>
-              <Select.Option value='fattyLiver'>Fatty Liver</Select.Option>
-              <Select.Option value='chronicKidney'>
-                Chronic kidney
-              </Select.Option>
-            </Select>
-          </Form.Item>
+                            <div className='input-box'>
+                            <Checkbox>
+                                 <h1 style={{fontSize:"20px"}}>I agree to the <a href='# '>Terms of Service/Policy</a></h1>
+                             </Checkbox> 
+                            </div>
+                             
+                            <div class="button">
+                               <input type="submit" value="Register"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+            </div>
+        )
+    }
 
-          <Form.Item
-            name='disability'
-            label='Disability'
-            requiredMark='optional'
-          >
-            <Input placeholder='Describe your Disability' />
-          </Form.Item>
 
-          <Form.Item
-            label='Identify Card'
-            name='photos'
-            rules={[
-              {
-                required: true,
-                message: 'Please upload for verification purpose',
-              },
-            ]}
-            hasFeedback
-          >
-            <Upload
-              listType='picture'
-              action={'http://localhost:3000/'}
-              accept='.png,.jpeg,.jpg'
-            >
-              <Button>Click to Upload Picture</Button>
-            </Upload>
-          </Form.Item>
-
-          <Form.Item
-            name='location'
-            label='Available Location'
-            rules={[{ required: true, message: 'Please Select a location' }]}
-            hasFeedback
-          >
-            <Select placeholder='Available Location within 10km radius'>
-              <Select.Option value='pj'>Petaling Jaya</Select.Option>
-              <Select.Option value='kl'>Kuala Lumpur</Select.Option>
-              <Select.Option value='pg'>Penang</Select.Option>
-              <Select.Option value='mumbai'>Mumbai</Select.Option>
-              <Select.Option value='chennai'>Chennai</Select.Option>
-            </Select>
-          </Form.Item>
-          <p style={{ color: 'blue' }}>
-            If your location is not within this area you will recieve the frozen
-            food
-          </p>
-
-          <Form.Item
-            name='street'
-            label='Street Address'
-            rules={[
-              { required: true, message: 'Please type in your Street Address' },
-              { whitespace: true },
-              {
-                min: 3,
-                message: 'Street Address must at least have 3 character',
-              },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='Member Street Address' />
-          </Form.Item>
-
-          <Form.Item
-            name='street2'
-            label='Street Address'
-            rules={[
-              { required: true, message: 'Please type in your Street Address' },
-              { whitespace: true },
-              {
-                min: 3,
-                message: 'Street Address must at least have 3 character',
-              },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='Member Street Address 2' />
-          </Form.Item>
-
-          <Form.Item
-            name='city'
-            label='City'
-            rules={[
-              { required: true, message: 'Please type in your city name' },
-              { whitespace: true },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='City' />
-          </Form.Item>
-
-          <Form.Item
-            name='state'
-            label='State'
-            rules={[
-              {
-                required: true,
-                message: 'Please type in your State/Province name',
-              },
-              { whitespace: true },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='State/Province' />
-          </Form.Item>
-
-          <Form.Item
-            name='zipCode'
-            label='Zip Code'
-            rules={[
-              { required: true, message: 'Please type in your Zip Code' },
-              { whitespace: true },
-              { min: 5, message: 'Zip code must at least have 5 numbers' },
-            ]}
-            hasFeedback
-          >
-            <Input placeholder='Zip Code' />
-          </Form.Item>
-
-          <Form.Item
-            name='Country'
-            label='Country'
-            rules={[{ required: true, message: 'Please choose your country' }]}
-            hasFeedback
-          >
-            <Select placeholder='Select your Country'>
-              <Select.Option value='malaysia'>Malaysia</Select.Option>
-              <Select.Option value='india'>India</Select.Option>
-            </Select>
-          </Form.Item>
-
-          <Form.Item
-            name='agreement'
-            wrapperCol={{ span: 24 }}
-            valuePropName='checked'
-            rules={[
-              {
-                validator: (_, value) =>
-                  value
-                    ? Promise.resolve()
-                    : Promise.reject(
-                        'To proceed, you need to agree with our terms and conditions'
-                      ),
-              },
-            ]}
-          >
-            <Checkbox>
-              I agree to the <a href='#'>Terms of Service/Privacy Policy</a>
-            </Checkbox>
-          </Form.Item>
-
-          <Form.Item wrapperCol={{ span: 14, offset: 6 }}>
-            <Button block type='primary' htmlType='submit'>
-              Register
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-    )
-  }
-}
-
-export default Member
+export default Member;

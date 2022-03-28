@@ -13,7 +13,6 @@ import FoodMenu from './components/FoodMenu'
 import FoodSafety from './components/FoodSafety'
 import FoodHelp from './components/FoodHelp'
 import Donation from './components/Donation'
-// import Footer from './components/Footer'
 import Login from './admin/Login'
 import MealRequest from './components/MealRequest'
 import { PartnersManagement } from './admin/PartnersManagement'
@@ -21,6 +20,11 @@ import { UsersManagement } from './admin/UsersManagement'
 import { Dashboard } from './admin/Dashboard'
 import { Profile } from './admin/Profile'
 import Footer from './components/Footer'
+import MemberThankyou from './components/Thankyou/MemberThankyou'
+import CGThankyou from './components/Thankyou/CGThankyou'
+import FPThankyou from './components/Thankyou/FPThankyou'
+import DPThankyou from './components/Thankyou/DPThankyou'
+import VThankyou from './components/Thankyou/VThankyou'
 
 function App() {
   return (
@@ -39,6 +43,11 @@ function App() {
           <Route path='/volunteer' element={<Volunteer />} />
           <Route path='/foodpartner' element={<FoodPartner />} />
           <Route path='/deliverypartner' element={<DeliveryPartner />} />
+          <Route path='/thankyou(member)' element={<MemberThankyou />} />
+          <Route path='/thankyou(caregiver)' element={<CGThankyou />} />
+          <Route path='/thankyou(FoodPartner)' element={<FPThankyou />} />
+          <Route path='/thankyou(DeliveryPartner)' element={<DPThankyou />} />
+          <Route path='/thankyou(volunteer)' element={<VThankyou />} />
 
           {/* Hibraheem's Module */}
           <Route path='/donate' element={<Donation />} />

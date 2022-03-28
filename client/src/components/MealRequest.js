@@ -8,8 +8,7 @@ const MealRequest = () => {
     const [tab, setTab] = useState(0)
 
     return (
-        <div className="p-20">
-            <h1 className='text-4xl font-bold'>Meals For Members</h1>
+        <div className="p-20"> 
             <p className='text-lg  my-4'>You’re also assured that your meals are prepared to suit your needs. Whether it is for religious, dietary or allergy reasons, all you need to do is make a request from our list of Special Meals.</p>
             <div className='mt-20'>
                 <h1 className='underline font-bold text-3xl'>Request Meal</h1>

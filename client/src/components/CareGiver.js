@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Button, Checkbox, Upload} from "antd";
-import '../components/CSS/Member.css'
+import '../components/CSS/Form.css'
 
 class Caregiver extends Component{
     render(){

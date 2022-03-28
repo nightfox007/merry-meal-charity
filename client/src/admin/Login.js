@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Icon} from 'react-icons-kit';
 import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
-import '../components/CSS/Member.css'
+import '../components/CSS/Form.css'
 
  function Login(){
   const [type, setType]=useState("password")

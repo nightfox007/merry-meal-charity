@@ -11,6 +11,7 @@ body {
       sans-serif; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #F9E45B, pink);
   }
 @tailwind base;
 @tailwind components;

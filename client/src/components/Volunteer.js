@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Checkbox} from "antd";
-import '../components/CSS/Member.css'
+import '../components/CSS/Form.css'
 
 class Volunteer extends Component{
     render(){

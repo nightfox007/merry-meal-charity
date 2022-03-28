@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-.body{
+.form-body{
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background: linear-gradient(135deg, #F9E45B, pink);
 }
 
-.container{
+.form-container{
   max-width: 700px;
   width: 100%;
   background-color: #fff;
@@ -19,12 +20,12 @@
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   
 }
-.container .title{
+.form-container .title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-.container .title::before{
+.form-container .title::before{
   content: "";
   position: absolute;
   left: 0;
@@ -151,4 +152,3 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
-

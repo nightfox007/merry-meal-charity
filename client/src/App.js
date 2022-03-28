@@ -20,6 +20,7 @@ import { PartnersManagement } from './admin/PartnersManagement'
 import { UsersManagement } from './admin/UsersManagement'
 import { Dashboard } from './admin/Dashboard'
 import { Profile } from './admin/Profile'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path='/profile' element={<Profile />} />
         </Routes>
         {/* <Footer /> */}
+        <Footer/>
       </Router>
     </div>
   )

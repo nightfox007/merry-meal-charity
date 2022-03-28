@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {Button, Checkbox, Upload} from "antd";
-import './Member.css'
+import '../components/CSS/Member.css'
 
 function Member(){
         return(
-            <div className='body'>
-            <div className='container'>
+            <div className='form-body'>
+            <div className='form-container'>
                 <div className='title'>Member Registration</div>
                 <div className='content'>
                     <form action='#'>
@@ -106,7 +106,7 @@ function Member(){
 
                             <div className='input-box'>
                             <Checkbox>
-                                 <h1 style={{fontSize:"20px"}}>I agree to the <a href='# '>Terms of Service/Policy</a></h1>
+                                 <h1 style={{fontSize:"12px"}}>I agree to the <a href='# '>Terms of Service/Policy</a></h1>
                              </Checkbox> 
                             </div>
                              

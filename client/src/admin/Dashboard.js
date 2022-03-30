@@ -1,12 +1,12 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
 
 const Dashboard = () => {
   return (
     <div className='d-flex'>
       <div>
-        <Sidebar />
+        {/* <Sidebar /> */}
       </div>
       <div
         style={{
@@ -17,12 +17,10 @@ const Dashboard = () => {
           overflowY: 'hidden',
         }}
       >
-        <div style={{ height: '100%' }}>
+        <div>
           <div
             style={{
               padding: '20px 5%',
-              height: 'calc(100% - 64px)',
-              overflowY: 'scroll',
             }}
           >
             <h4 className='font-weight-bold mb-3'>Users</h4>

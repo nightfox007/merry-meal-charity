@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Table, Button } from 'react-bootstrap'
 import axios from 'axios'
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
 
 const UsersManagement = () => {
   const [data, setData] = useState([])
@@ -28,9 +28,7 @@ const UsersManagement = () => {
 
   return (
     <div className='d-flex'>
-      <div>
-        <Sidebar />
-      </div>
+      <div>{/* <Sidebar /> */}</div>
       <div
         style={{
           flex: '1 1 auto',
@@ -40,12 +38,10 @@ const UsersManagement = () => {
           overflowY: 'hidden',
         }}
       >
-        <div style={{ height: '100%' }}>
+        <div>
           <div
             style={{
               padding: '20px 5%',
-              height: 'calc(100% - 64px)',
-              overflowY: 'scroll',
             }}
           >
             <h4 className='font-weight-bold mb-3'>Members</h4>

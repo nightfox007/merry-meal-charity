@@ -19,7 +19,6 @@
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
-<<<<<<< HEAD:client/src/styles/Form.css
 
 .contact{
   max-width: 300px;
@@ -30,8 +29,6 @@
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 
-=======
->>>>>>> 3c5e6cb8acac811c0cb54f367912d9452a40fc2d:client/src/components/CSS/Form.css
 .form-container .title{
   font-size: 25px;
   font-weight: 500;

@@ -1,11 +1,11 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
 import { Card, Button } from 'react-bootstrap'
 const PartnersManagement = () => {
   return (
     <div className='d-flex'>
       <div>
-        <Sidebar />
+        {/* <Sidebar /> */}
       </div>
 
       <Card style={{ width: '18rem' }}>

@@ -4,6 +4,18 @@
   font-family: "Montserrat", sans-serif !important;
 } */
 
+<<<<<<< HEAD:client/src/styles/App.css
+=======
+body {
+    margin: 0;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #F9E45B, pink);
+  }
+>>>>>>> 3c5e6cb8acac811c0cb54f367912d9452a40fc2d:client/src/App.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -125,19 +137,36 @@ img {
 }
 /* ****** */
 
+<<<<<<< HEAD:client/src/styles/App.css
 /* Admin  */
 .sidebar-content bar {
+=======
+/* Jarrod's Module */
+
+
+/* ****** */
+
+/* Hibraheem's Module */
+
+/* ****** */
+
+::-webkit-scrollbar {
+  width:5px;
+  height:5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius:5px;
+  background-color: #ccc;
+}
+
+.sidebar-content a {
+>>>>>>> 3c5e6cb8acac811c0cb54f367912d9452a40fc2d:client/src/App.css
 	text-transform:capitalize;
 }
 /* ****** */
 
 /* Footer */
-.footer{
-    height: 10vh;
-    background: #1A4D8C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 /* ****** */
 

@@ -57,10 +57,10 @@ const NavbarC = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link className='nav-links' href='foodmenu'>
-                  Food Menu
+                <Nav.Link className='nav-links' href='foodsafety'>
+                  Food Safety
                 </Nav.Link>
-                <Nav.Link className='nav-links' href='contact'>
+                <Nav.Link className='nav-links' href='contactus'>
                   Contact
                 </Nav.Link>
                 <Nav.Link href='#' disabled>

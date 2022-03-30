@@ -18,31 +18,28 @@ const Sidebar = () => {
       <CDBSidebar textColor='#fff' backgroundColor='#333'>
         <CDBSidebarHeader prefix={<i className='fa fa-bars fa-large'></i>}>
           <a
-            href='/'
-            className='text-decoration-none'
+            href='/dashboard'
+            className='text-decoration-none bar'
             style={{ color: 'inherit' }}
           >
-            Contrast
+            MerryMeal
           </a>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className='sidebar-content'>
           <CDBSidebarMenu>
-            <NavLink exact to='/dashboard' activeClassName='activeClicked'>
-              <CDBSidebarMenuItem icon='columns'>dashboard</CDBSidebarMenuItem>
+            <NavLink exact to='/dashboard' activeclassname='activeClicked'>
+              <CDBSidebarMenuItem icon='columns'>Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to='/partners' activeClassName='activeClicked'>
+            <NavLink exact to='/partners' activeclassname='activeClicked'>
               <CDBSidebarMenuItem icon='users'>
                 Partners Management
               </CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to='/users' activeClassName='activeClicked'>
-              <CDBSidebarMenuItem icon='users'>
+            <NavLink exact to='/users' activeclassname='activeClicked'>
+              <CDBSidebarMenuItem icon='user'>
                 Users Management
               </CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to='/profile' activeClassName='activeClicked'>
-              <CDBSidebarMenuItem icon='user'>profile</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
           <CDBSidebarMenu></CDBSidebarMenu>
@@ -55,7 +52,7 @@ const Sidebar = () => {
               padding: '20px 5px',
             }}
           >
-            Sidebar Footer
+            MerryMeal @2022
           </div>
         </CDBSidebarFooter>
       </CDBSidebar>

@@ -1,0 +1,8 @@
+.home{
+    width: 100%;
+}
+
+.home .hero-banner {
+  width: auto;
+  height: 550px;
+}

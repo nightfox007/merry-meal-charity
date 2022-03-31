@@ -41,8 +41,6 @@ function Member() {
     country,
   } = states
 
-  const navigate = useNavigate()
-
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
@@ -79,7 +77,6 @@ function Member() {
           zip_code: '',
           country: '',
         })
-        
       })
   }
 
@@ -88,11 +85,12 @@ function Member() {
     setState({ ...state, [name]: value })
   }
 
-  const handleMealRequest = (e) => {
-    e.preventDefault();
-    navigate('/mealrequest')
-  }
+  // const navigate = useNavigate()
 
+  // const handleMealRequest = (e) => {
+  //   e.preventDefault()
+  //   navigate('/mealrequest')
+  // }
 
   return (
     <div className='form-body'>
@@ -304,7 +302,8 @@ function Member() {
               <div className='input-box'>
                 <Checkbox>
                   <h1 style={{ fontSize: '12px' }}>
-                    I agree to the <a href='/TermsCondition'>Terms of Service/Policy</a>
+                    I agree to the{' '}
+                    <a href='/TermsCondition'>Terms of Service/Policy</a>
                   </h1>
                 </Checkbox>
               </div>

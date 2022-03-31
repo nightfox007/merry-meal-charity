@@ -46,13 +46,13 @@ function Components() {
           <Route path='/caregiver' element={<CareGiver />} />
           <Route path='/volunteer' element={<Volunteer />} />
           <Route path='/foodpartner' element={<FoodPartner />} />
-          <Route path='/deliverypartner' element={<DeliveryPartner />}/>
+          <Route path='/deliverypartner' element={<DeliveryPartner />} />
           <Route path='/thankyou(member)' element={<MemberThankyou />} />
           <Route path='/thankyoucaregiver' element={<CGThankyou />} />
           <Route path='/thankyou(FoodPartner)' element={<FPThankyou />} />
           <Route path='/thankyou(DeliveryPartner)' element={<DPThankyou />} />
           <Route path='/thankyou(volunteer)' element={<VThankyou />} />
-          <Route path='/thankyou(donors)' element={<DThankyou />} />
+          <Route path='/thankyoudonors' element={<DThankyou />} />
 
           {/* Hibraheem's Module */}
           <Route path='/donate' element={<Donation />} />
@@ -64,8 +64,8 @@ function Components() {
           {/* Nikhat's Module */}
           <Route path='/foodsafety' element={<FoodSafety />} />
           <Route path='/KnowYourFood' element={<KnowYourFood />} />
-          <Route path='/FrozenMeal' element={<FrozenMeal/>} />
-          <Route path='/FrozenMealBenefit' element={<FrozenMealBenefit/>} />
+          <Route path='/FrozenMeal' element={<FrozenMeal />} />
+          <Route path='/FrozenMealBenefit' element={<FrozenMealBenefit />} />
         </Routes>
         {/* <Footer /> */}
       </Router>

@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import {Checkbox} from "antd";
 import '../styles/Form.css'
 
-class DeliveryPartner extends Component{
-    render(){
+function DeliveryPartner (){
+    const navigate = useNavigate();
+
+    const thankyou = (e) => {
+        navigate('/thankyou(DeliveryPartner)')
+    }
+    
         return(
             <div className='form-body'>
             <div className='form-container'>
@@ -70,7 +76,7 @@ class DeliveryPartner extends Component{
                              </Checkbox> 
                             </div>
                              
-                            <input className="button" type="submit" value="Register"/>
+                            <input className="button" type="submit" value="Register" onClick={thankyou}/>
                         </div>
                     </form>
                 </div>
@@ -79,6 +85,6 @@ class DeliveryPartner extends Component{
             </div>
         )
     }
-}
+
 
 export default DeliveryPartner;

@@ -27,6 +27,7 @@ import Donation from './components/Donation'
 import MealRequest from './components/MealRequest'
 import TermsCondition from './pages/TermsCondition'
 import Footer from './components/Footer'
+import DThankyou from './components/Thankyou/DThankyou'
 
 function Components() {
   return (
@@ -51,6 +52,7 @@ function Components() {
           <Route path='/thankyou(FoodPartner)' element={<FPThankyou />} />
           <Route path='/thankyou(DeliveryPartner)' element={<DPThankyou />} />
           <Route path='/thankyou(volunteer)' element={<VThankyou />} />
+          <Route path='/thankyou(donors)' element={<DThankyou />} />
 
           {/* Hibraheem's Module */}
           <Route path='/donate' element={<Donation />} />

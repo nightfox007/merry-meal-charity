@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import {Button, Checkbox, Upload} from "antd";
 import '../styles/Form.css'
 
-const navigate = useNavigate;
+function Caregiver(){
+    const navigate = useNavigate();
 
 const thankyou = (e) => {
     navigate('/thankyoucaregiver')
 }
-
-class Caregiver extends Component{
-    render(){
+    
         return(
             <div className='form-body'>
             <div className='form-container'>
@@ -78,6 +77,5 @@ class Caregiver extends Component{
             </div>
         )
     }
-}
 
 export default Caregiver;

@@ -309,7 +309,7 @@ function Member() {
                 </Checkbox>
               </div>
 
-              <input className='button' type='submit' value='Register' onClick={handleMealRequest} />
+              <input className='button' type='submit' value='Register' />
               {/* <button className='button'>Register</button> */}
             </div>
           </form>

@@ -6,9 +6,9 @@ import { VegetarianMealOptions } from "../components/MealRequestComponents/Veget
 import '../styles/Form.css'
 
 
-const MealRequest = () => {
+function MealRequest () {
     const [tab, setTab] = useState(0)
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
 const thankyou = (e) => {
     navigate('/thankyou(member)')

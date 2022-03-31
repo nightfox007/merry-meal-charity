@@ -7,8 +7,8 @@ const cors = require('cors')
 const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'shewhopraises',
-  database: 'merry_meal_charity',
+  password: 'jarrod0508',
+  database: 'merry_meal',
 })
 
 app.use(
@@ -65,7 +65,21 @@ app.get('/delivery_partner/get', (req, res) => {
   })
 })
 
-// Post Method
+app.get('/donors/get', (req, res) => {
+  const sqlGet = 'SELECT* FROM donors'
+  db.query(sqlGet, (error, result) => {
+    res.send(result)
+  })
+})
+
+app.get('/volunteers/get', (req, res) => {
+  const sqlGet = 'SELECT* FROM volunteers'
+  db.query(sqlGet, (error, result) => {
+    res.send(result)
+  })
+})
+
+// Post Method for Members
 app.post('/members/post', (req, res) => {
   const {
     first_name,
@@ -97,6 +111,77 @@ app.post('/members/post', (req, res) => {
       disease_type,
       gender,
       location,
+      street_address,
+      city,
+      state,
+      zip_code,
+      country,
+    ],
+    (error, result) => {
+      if (error) {
+        console.log(error)
+      }
+    }
+  )
+})
+
+// Post Method for donation
+app.post('/donors/post', (req, res) => {
+  const {
+    first_name,
+    last_name,
+    email,
+    contact_number,
+    country,
+    donation_amout,
+  } = req.body
+  const sqlInsert =
+    'INSERT INTO donors (first_name, last_name, email, contact_number, country, donation_amout) VALUES (?, ?, ?, ?, ?, ?)'
+  db.query(
+    sqlInsert,
+    [first_name, last_name, email, contact_number, country, donation_amout],
+    (error, result) => {
+      if (error) {
+        console.log(error)
+      }
+    }
+  )
+})
+
+// Post Method for volunteers
+app.post('/volunteers/post', (req, res) => {
+  const {
+    first_name,
+    last_name,
+    email,
+    contact_number,
+    dob,
+    gender,
+    employment_status,
+    availability_for_part_time_workers,
+    volunteer_role,
+    reasons_for_getting_involved,
+    street_address,
+    city,
+    state,
+    zip_code,
+    country,
+  } = req.body
+  const sqlInsert =
+    'INSERT INTO volunteers (first_name, last_name, email, contact_number, dob, gender, employment_status , availability_for_part_time_workers,volunteer_role,reasons_for_getting_involved, street_address, city, state, zip_code, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)'
+  db.query(
+    sqlInsert,
+    [
+      first_name,
+      last_name,
+      email,
+      contact_number,
+      dob,
+      gender,
+      employment_status,
+      availability_for_part_time_workers,
+      volunteer_role,
+      reasons_for_getting_involved,
       street_address,
       city,
       state,

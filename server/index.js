@@ -7,8 +7,8 @@ const cors = require('cors')
 const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'jarrod0508',
-  database: 'merry_meal',
+  password: 'shewhopraises',
+  database: 'merry_meal_charity',
 })
 
 app.use(
@@ -58,21 +58,14 @@ app.get('/caregiver/get', (req, res) => {
   })
 })
 
-app.get('/donors/get', (req, res) => {
-  const sqlGet = 'SELECT* FROM donors'
+app.get('/delivery_partner/get', (req, res) => {
+  const sqlGet = 'SELECT* FROM delivery_partner'
   db.query(sqlGet, (error, result) => {
     res.send(result)
   })
 })
 
-app.get('/volunteers/get', (req, res) => {
-  const sqlGet = 'SELECT* FROM volunteers'
-  db.query(sqlGet, (error, result) => {
-    res.send(result)
-  })
-})
-
-// Post Method for Members
+// Post Method
 app.post('/members/post', (req, res) => {
   const {
     first_name,
@@ -118,83 +111,15 @@ app.post('/members/post', (req, res) => {
   )
 })
 
-// Post Method for donation
-app.post('/donors/post', (req, res) => {
-  const {
-    first_name,
-    last_name,
-    email,
-    contact_number,
-    country,
-    donation_amout
-  } = req.body
-  const sqlInsert =
-    'INSERT INTO donors (first_name, last_name, email, contact_number, country, donation_amout) VALUES (?, ?, ?, ?, ?, ?)'
-  db.query(
-    sqlInsert,
-    [
-      first_name,
-      last_name,
-      email,
-      contact_number,
-      country,
-      donation_amout
-    ],
-    (error, result) => {
-      if (error) {
-        console.log(error)
-      }
-    }
-  )
-})
-
-// Post Method for volunteers
-app.post('/volunteers/post', (req, res) => {
-  const {
-    first_name,
-    last_name,
-    email,
-    contact_number,
-    dob,
-    gender,
-    employment_status,
-    availability_for_part_time_workers,
-    volunteer_role,
-    reasons_for_getting_involved,
-    street_address,
-    city,
-    state,
-    zip_code,
-    country,
-  } = req.body
-  const sqlInsert =
-    'INSERT INTO volunteers (first_name, last_name, email, contact_number, dob, gender, employment_status , availability_for_part_time_workers,volunteer_role,reasons_for_getting_involved, street_address, city, state, zip_code, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)'
-  db.query(
-    sqlInsert,
-    [
-      first_name,
-      last_name,
-      email,
-      contact_number,
-      dob,
-      gender,
-      employment_status,
-      availability_for_part_time_workers,
-      volunteer_role,
-      reasons_for_getting_involved,
-      street_address,
-      city,
-      state,
-      zip_code,
-      country,
-    ],
-    (error, result) => {
-      if (error) {
-        console.log(error)
-      }
-    }
-  )
-})
+// app.get('/', (req, res) => {
+//   const sqlInsert =
+//     "INSERT INTO members (members_id, first_name, last_name, email, contact_number, dob, disability, disease_type, gender, location, street_address, city, state, zip_code, country) VALUES (0, 'John', 'Doe', 'john@gmail.com', '123456789', '2008-7-04', 'OKU', 'diabetes', 'Male', 'Penang', 'Jelutong', 'Penang', 'Penang', 13700, 'Malaysia');"
+//   db.query(sqlInsert, (error, result) => {
+//     console.log('error', error)
+//     console.log('result', result)
+//     res.send('Test')
+//   })
+// })
 
 app.listen(3001, () => {
   console.log('running on port 3001')

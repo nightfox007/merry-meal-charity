@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Table, Button } from 'react-bootstrap'
+import { Table, Button, Modal } from 'react-bootstrap'
 import axios from 'axios'
 // import Sidebar from './Sidebar'
 
@@ -25,6 +25,22 @@ const UsersManagement = () => {
   useEffect(() => {
     loadData2()
   }, [])
+
+  // Modal
+  const [view, setView] = useState(false)
+
+  const handleClose1 = () => setView(false)
+  const handleView = () => setView(true)
+
+  const [accept, setAccept] = useState(false)
+
+  const handleClose2 = () => setAccept(false)
+  const handleAccept = () => setAccept(true)
+
+  const [decline, setDecline] = useState(false)
+
+  const handleClose3 = () => setDecline(false)
+  const handleDecline = () => setDecline(true)
 
   return (
     <div className='d-flex'>
@@ -66,9 +82,15 @@ const UsersManagement = () => {
                       <td>{item.email}</td>
                       <td>{item.contact_number}</td>
                       <td>
-                        <Button variant='primary'>View</Button>
-                        <Button variant='success'>Accept</Button>
-                        <Button variant='danger'>Decline</Button>
+                        <Button variant='primary' onClick={handleView}>
+                          View
+                        </Button>
+                        <Button variant='success' onClick={handleAccept}>
+                          Accept
+                        </Button>
+                        <Button variant='danger' onClick={handleDecline}>
+                          Decline
+                        </Button>
                       </td>
                     </tr>
                   )
@@ -98,15 +120,71 @@ const UsersManagement = () => {
                       <td>{item.email}</td>
                       <td>{item.contact_number}</td>
                       <td>
-                        <Button variant='primary'>View</Button>
-                        <Button variant='success'>Accept</Button>
-                        <Button variant='danger'>Decline</Button>
+                        <Button variant='primary' onClick={handleView}>
+                          View
+                        </Button>
+                        <Button variant='success' onClick={handleAccept}>
+                          Accept
+                        </Button>
+                        <Button variant='danger' onClick={handleDecline}>
+                          Decline
+                        </Button>
                       </td>
                     </tr>
                   )
                 })}
               </tbody>
             </Table>
+
+            {/* Modal */}
+            <Modal show={view} onHide={handleClose1}>
+              <Modal.Header closeButton>
+                <Modal.Title>Modal heading</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Woohoo, you're reading this text in a modal!
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant='secondary' onClick={handleClose1}>
+                  Close
+                </Button>
+                <Button variant='primary' onClick={handleClose1}>
+                  Save Changes
+                </Button>
+              </Modal.Footer>
+            </Modal>
+
+            <Modal show={accept} onHide={handleClose2}>
+              <Modal.Header closeButton>
+                <Modal.Body>
+                  Are you sure you want to accept this partnership?
+                </Modal.Body>
+              </Modal.Header>
+              <Modal.Footer>
+                <Button variant='secondary' onClick={handleClose2}>
+                  No, cancel
+                </Button>
+                <Button variant='primary' onClick={handleClose2}>
+                  Yes, confirm
+                </Button>
+              </Modal.Footer>
+            </Modal>
+
+            <Modal show={decline} onHide={handleClose3}>
+              <Modal.Header closeButton>
+                <Modal.Body>
+                  Are you sure you want to decline this partnership?
+                </Modal.Body>
+              </Modal.Header>
+              <Modal.Footer>
+                <Button variant='secondary' onClick={handleClose3}>
+                  No, cancel
+                </Button>
+                <Button variant='primary' onClick={handleClose3}>
+                  Yes, confirm
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </div>
         </div>
       </div>

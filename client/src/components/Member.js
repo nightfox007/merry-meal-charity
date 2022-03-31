@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button, Checkbox, Upload } from 'antd'
 import '../styles/Form.css'
 import axios from 'axios'
@@ -79,7 +79,7 @@ function Member() {
           zip_code: '',
           country: '',
         })
-        setTimeout(() => navigate.push('/'), 500)
+        
       })
   }
 
@@ -87,6 +87,13 @@ function Member() {
     const { name, value } = e.target
     setState({ ...state, [name]: value })
   }
+
+  const handleMealRequest = (e) => {
+    e.preventDefault();
+    navigate('/mealrequest')
+  }
+
+
   return (
     <div className='form-body'>
       <div className='form-container'>
@@ -297,12 +304,12 @@ function Member() {
               <div className='input-box'>
                 <Checkbox>
                   <h1 style={{ fontSize: '12px' }}>
-                    I agree to the <a href='/#'>Terms of Service/Policy</a>
+                    I agree to the <a href='/TermsCondition'>Terms of Service/Policy</a>
                   </h1>
                 </Checkbox>
               </div>
 
-              <input className='button' type='submit' value='Register' />
+              <input className='button' type='submit' value='Register' onClick={handleMealRequest} />
               {/* <button className='button'>Register</button> */}
             </div>
           </form>

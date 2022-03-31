@@ -1,6 +1,5 @@
 import React from 'react';
 import {Button} from 'react-bootstrap'
-// import '../CSS/Thankyou.css'
 import '../../styles/Thankyou.css'
 
 function FPThankyou(){

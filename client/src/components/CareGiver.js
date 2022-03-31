@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom'
 import {Button, Checkbox, Upload} from "antd";
 import '../styles/Form.css'
+
+const navigate = useNavigate;
+
+const thankyou = (e) => {
+    navigate('/thankyoucaregiver')
+}
 
 class Caregiver extends Component{
     render(){
@@ -62,7 +69,7 @@ class Caregiver extends Component{
                              </Checkbox> 
                             </div>
                              
-                            <input className="button" type="submit" value="Register"/>
+                            <input className="button" type="submit" value="Register" onClick={thankyou}/>
                         </div>
                     </form>
                 </div>

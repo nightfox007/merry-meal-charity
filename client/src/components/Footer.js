@@ -6,7 +6,7 @@ function Footer() {
             <div>
                 <footer className='footer'>
                     <div className='footer-copyright-text'>@ 2022 Copyright:
-                    <a href="/TermsCondition/">MerryMeal.com</a>
+                    <a href="/TermsCondition">MerryMeal.com</a>
                     </div>
                 </footer>
             </div>

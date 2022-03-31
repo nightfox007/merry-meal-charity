@@ -5,7 +5,7 @@ import '../../styles/Thankyou.css'
 
 function MemberThankyou(){
         return(
-            <div className='thankyou-body'>
+            <div className='thankyou-body' >
             <div className='thankyou-container'>
                 <div className='title'>Thanks for Applying To Be A Member</div>
                 <div className='content'>

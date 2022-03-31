@@ -1,11 +1,18 @@
 import React, {useState} from "react";
+import { useNavigate } from 'react-router-dom'
 import {DietaryMealOptions} from "../components/MealRequestComponents/Dietary/dietaryMealOptions.js";
 import { ReligiousMealOptions } from "../components/MealRequestComponents/Religious/religiousMealOptions";
 import { VegetarianMealOptions } from "../components/MealRequestComponents/Vegetarian/vegetarianMealOptions.js"
 import '../styles/Form.css'
 
+
 const MealRequest = () => {
     const [tab, setTab] = useState(0)
+    const navigate = useNavigate;
+
+const thankyou = (e) => {
+    navigate('/thankyou(member)')
+}
     return (
         <div className='form-body' style={{paddingBottom:"40px"}}>
             <div className='form-container'>
@@ -24,7 +31,7 @@ const MealRequest = () => {
                         {tab === 2 ? <DietaryMealOptions></DietaryMealOptions> : null}
                     </div>
                              
-                          <input className="button" type="submit" value="Confirm Meal"/>
+                          <input className="button" type="submit" value="Confirm Meal" onClick={thankyou}/>
                         </div>
                     </form>
                 </div>

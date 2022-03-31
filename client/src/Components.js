@@ -47,7 +47,7 @@ function Components() {
           <Route path='/foodpartner' element={<FoodPartner />} />
           <Route path='/deliverypartner' element={<DeliveryPartner />}/>
           <Route path='/thankyou(member)' element={<MemberThankyou />} />
-          <Route path='/thankyou(caregiver)' element={<CGThankyou />} />
+          <Route path='/thankyoucaregiver' element={<CGThankyou />} />
           <Route path='/thankyou(FoodPartner)' element={<FPThankyou />} />
           <Route path='/thankyou(DeliveryPartner)' element={<DPThankyou />} />
           <Route path='/thankyou(volunteer)' element={<VThankyou />} />

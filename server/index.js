@@ -7,8 +7,8 @@ const cors = require('cors')
 const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'shewhopraises',
-  database: 'merry_meal_charity',
+  password: 'jarrod0508',
+  database: 'merry_meal',
 })
 
 app.use(
@@ -97,8 +97,8 @@ app.post('/members/post', (req, res) => {
       country,
     ],
     (error, result) => {
-      if (error) {
-        console.log(error)
+      if (result) {
+        console.log(result)
       }
     }
   )

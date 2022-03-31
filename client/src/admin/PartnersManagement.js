@@ -96,17 +96,15 @@ const PartnersManagement = () => {
             {/* Modal */}
             <Modal show={view} onHide={handleClose1}>
               <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Partner details</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                Woohoo, you're reading this text in a modal!
+                Company Name: FoodPanda Contact Name: Jason Email:
+                jason@gmail.com Contact: 321413433
               </Modal.Body>
               <Modal.Footer>
                 <Button variant='secondary' onClick={handleClose1}>
                   Close
-                </Button>
-                <Button variant='primary' onClick={handleClose1}>
-                  Save Changes
                 </Button>
               </Modal.Footer>
             </Modal>

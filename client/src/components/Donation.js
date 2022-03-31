@@ -187,6 +187,4 @@ function Donation() {
   )
 }
 
-// The button submits the form, if there is the onclick method, it just moves to the thank u page.
-// how to let the button submit and navigate to another page after sumbmission.
 export default Donation

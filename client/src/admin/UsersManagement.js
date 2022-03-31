@@ -139,10 +139,10 @@ const UsersManagement = () => {
             {/* Modal */}
             <Modal show={view} onHide={handleClose1}>
               <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>User Details</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                Woohoo, you're reading this text in a modal!
+                First Name: Last Name: Email: Contact Number:
               </Modal.Body>
               <Modal.Footer>
                 <Button variant='secondary' onClick={handleClose1}>
